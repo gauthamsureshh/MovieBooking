@@ -1,0 +1,43 @@
+.register-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; 
+    background-image: url(https://www.shutterstock.com/image-photo/beautiful-black-white-color-wide-600nw-1099648793.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card {
+    color: rgba(81, 9, 205, 0.924); 
+    background-color: rgba(126, 126, 128, 0.139); 
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.362); 
+}
+
+
+.inputField {
+    background-color: rgba(152, 146, 146, 0.073);
+    padding: 7px;
+    border-radius: 8px;
+    display: block;
+    width: 100%; 
+    margin-top: 5px; 
+}
+
+.login{
+    text-decoration: none;
+}
+.btn-dark {
+    background-color: #4540406d;
+}
+.btn:hover {
+    opacity: 0.1;
+}
+

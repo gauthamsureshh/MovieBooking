@@ -1,0 +1,40 @@
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; 
+    background-image: url(https://st.depositphotos.com/18906102/58729/i/450/depositphotos_587294478-stock-photo-projector-spotlight-blue-color-smoke.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card {
+    color: rgba(107, 189, 214, 0.448); 
+    background-color: rgba(127, 127, 128, 0.244); 
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 80%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.362); 
+}
+
+
+.inputField {
+    background-color: rgba(152, 146, 146, 0.073);
+    margin-bottom: 20px;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.create{
+    text-decoration: none;
+}
+.btn-secondary {
+    background-color: #52bee95f; /* Green background color for the button */
+}
+.btn:hover {
+    opacity: 0.7;
+}
