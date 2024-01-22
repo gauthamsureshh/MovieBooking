@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../Styles/booking.css"
+import MovieSeatBooking from './seats';
 
 function BookingCard (){
     const [selectedDate, setSelectedDate] = useState(null);
@@ -40,7 +41,7 @@ function BookingCard (){
                 ))}
             </div>
             <div className='card-footer'>
-                <h4 style={{color:"black"}}>Seat Selection</h4>
+                <MovieSeatBooking/>
             </div>
         </div>
         </div>
