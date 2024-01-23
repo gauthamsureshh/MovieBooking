@@ -1,5 +1,5 @@
 import React from "react"
-import logo from '../Images/logo.png'
+import logo from '../Images/logo3.png'
 import NavStyle from "./nav_Style"
 import { useNavigate } from "react-router-dom"
 
@@ -16,16 +16,11 @@ function NavBar(){
         nav("login")
     }
 
-
-
-    
-
-
     return (
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-black bg-black">
             <a class="navbar-brand" href="#">
-                <img src={logo} width="120" height="30" className="d-inline-block align-top" alt="Theatre Logo"/>
+                <img src={logo} width="100" height="30" className="d-inline-block align-top" alt="Theatre Logo"/>
             </a>
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <form class="form-inline   my-lg-0 d-none d-lg-block">

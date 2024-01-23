@@ -1,0 +1,54 @@
+.confirmBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://st3.depositphotos.com/1064045/15061/i/450/depositphotos_150614902-stock-photo-unusual-cinema-concept-3d-illustration.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.card{
+    background-color: #ffffff1b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.961);
+    max-width: 400px;
+    width: 100%;
+}
+.card img{
+    max-width: 80px;
+    border-radius: 5px;
+    margin-right: 15px;
+    float: right;
+}
+.card-details{
+    text-align: left;
+    margin-bottom: 15px;
+}
+.pageMtitle{
+    color: rgba(227, 141, 3, 0.947);
+    margin-bottom: 8px;
+}
+.card-details p{
+    color: rgba(14, 14, 14, 0.889);
+}
+.card-details h5{
+    color: rgba(28, 27, 27, 0.889);
+    text-align: center;
+}
+.confirm{
+    background-color: rgba(169, 36, 36, 0.943);
+}
+.confirm:hover{
+    background-color:rgba(169, 36, 36, 0.714);
+    color: black;
+}
+
+.card-details h6{
+    color: rgb(60, 31, 9);
+}
+.card-details hr {
+    border: none;
+    height: 2px;
+    background-color: #0e0e0e;
+}

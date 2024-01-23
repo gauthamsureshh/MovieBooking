@@ -119,13 +119,11 @@ p.text {
 p.text span {
   color: #6feaf6;
 }
-.btn{
+.booknow{
     color: rgba(13, 13, 13, 0.848);
-    background-color: #91130fa8;
- 
+    background-color: #91130fab;
 }
-.btn:hover{
+.booknow  :hover{
     color: black;
     background-color: #ce3434e4;
- 
 }

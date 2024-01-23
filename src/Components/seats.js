@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/seats_css.css';
+import { useNavigate } from "react-router-dom"
 
 const MovieSeatBooking = () => {
+  const nav=useNavigate()
+  const handleBookNow=()=>{
+      nav("confirmticket")
+  }
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [movieIndex, setMovieIndex] = useState(0);
-  const [moviePrice, setMoviePrice] = useState(10); // Default movie price, assuming $10 per seat
+  const [moviePrice, setMoviePrice] = useState(10);
 
   useEffect(() => {
     // Load data from localStorage on component mount
@@ -114,7 +119,7 @@ const MovieSeatBooking = () => {
         <span id="total">{totalPrice.toFixed(2)}</span>
       </p>
       <div className='payment'>
-        <button className='btn btn-outline btn-dark'>Make Payment</button>
+        <button className='btn btn-danger booknow' onClick={handleBookNow}>Book Now</button>
       </div>
     </div>
   );

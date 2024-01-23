@@ -1,0 +1,40 @@
+.aboutUs{
+    background-image: url(https://images.pond5.com/audience-movie-theater-cinema-footage-153915401_iconl.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    
+}
+header{
+    margin-bottom: 30px;
+}
+h1{
+    font-size:40px;
+    color: #c9c9c6d3;
+}
+h4 {
+    font-size:20px;
+    color: #cbeff2eb;
+}
+/* .aboutSection,
+.goalSection,
+.teamsection {
+  margin-bottom: 30px;
+} */
+h2{
+    font-size:30px;
+    color: rgba(242, 192, 11, 0.678);
+    margin-bottom: 15px;
+}
+p{
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(241, 235, 235, 0.825);
+}
+.contact{
+    text-decoration: none;
+    color: beige;
+}

@@ -4,13 +4,13 @@
     align-items: center;
     min-height: 100vh;
     margin: 0; 
-    background-image: url(https://www.shutterstock.com/image-photo/beautiful-black-white-color-wide-600nw-1099648793.jpg);
+    background-image: url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876015.jpg?w=1060&t=st=1705924590~exp=1705925190~hmac=c7340fd3911bf1db3b3ab61d110c7e44dbe8718e10129b5d6669c48630e265b5);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 .card {
-    color: rgba(81, 9, 205, 0.924); 
+    color: rgba(240, 237, 244, 0.816); 
     background-color: rgba(126, 126, 128, 0.139); 
     padding: 20px;
     border-radius: 10px;
@@ -21,23 +21,28 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.362); 
 }
 
-
+.label{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .inputField {
     background-color: rgba(152, 146, 146, 0.073);
     padding: 7px;
     border-radius: 8px;
     display: block;
     width: 100%; 
-    margin-top: 5px; 
+    margin-top: 5px;
+    color:rgb(0, 0, 0); 
 }
 
 .login{
     text-decoration: none;
+    color: rgb(221, 236, 158);
 }
 .btn-dark {
-    background-color: #4540406d;
+    background-color: #6db3e5e1;
 }
 .btn:hover {
-    opacity: 0.1;
+    background-color: #6db3e563;
 }
 

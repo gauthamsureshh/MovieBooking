@@ -12,17 +12,17 @@ function Register(){
 	const navigate=useNavigate()
 	function registerUser(){
 		const user={
-			name:name,
+			username:name,
 			email:email,
-			password:password,
-			password_confirmation:passwordConf
+			password1:password,
+			password2:passwordConf
 		}
 		axios.post('http://127.0.0.1:8000/signup',user).then(response=>{
 			setErrormsg('')
 			navigate('/')
 		}).catch(error=>{
 			if(error.response.data.errors){
-				setErrormsg(Object.values(error.response.data.errors).join(''))
+				setErrormsg(Object.values(error.response.data.error).join(''))
 			}
 			else{
 				setErrormsg("API Connection Failed..!")
@@ -36,19 +36,19 @@ function Register(){
             <h2>Sign Up</h2>
 			{errormsg?<div className="alert alert-danger">{errormsg}</div>:''}
 			<div class="inputBox">
-                <span>Username</span>
+                <label className="label">Username</label>
 				<input type="text" className="inputField" value={name} onInput={(event=>setName(event.target.value))} required="required"/>
 			</div>
 			<div class="inputBox">
-                <span>Email</span>
+                <label className="label">Email</label>
 				<input type="text" className="inputField" value={email} onInput={(event=>setEmail(event.target.value))} required="required"/>
 			</div>
 			<div class="inputBox">
-                <span>New Password</span>
+                <label className="label">New Password</label>
 				<input type="password" className="inputField" value={password} onInput={(event=>setPassword(event.target.value))}required="required"/>
 			</div>
 			<div class="inputBox">
-                <span>Confirm Password</span>
+                <label className="label">Confirm Password</label>
 				<input type="password" className="inputField" value={passwordConf} onInput={(event=>setPasswordConf(event.target.value))} required="required"/>
 			</div>
 			<div class="inputBox">
