@@ -4,9 +4,7 @@ import React, { useEffect, useState } from "react";
 import '../Styles/seats_css.css';
 
 
-function MovieSeatBooking(props){
-
-  console.log(props.movieid)
+function MovieSeatBookings(){
   
   const [selectedSeats,setSelectedSeats]=useState([])
   const [moviePrice,setMoviePrice]=useState(10)
@@ -117,4 +115,4 @@ return(
 }
 
 
-export default MovieSeatBooking
+export default MovieSeatBookings

@@ -46,3 +46,7 @@
     background-color: #6db3e563;
 }
 
+.error{
+    color: red;
+    font-size: 15px;
+}

@@ -8,30 +8,25 @@
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
-   
-    bottom: 0;
-    
   }
 
-  
-  .about p {
+.about p {
     display: inline;
     margin: 0; 
-    padding: 13px;
+    padding: 11px;
   }
-  hr {
+hr {
     width: 100%;
-    height: 5px;
-    background-color: #396ce2;
+    height: 3px;
+    background-color: rgb(208, 209, 211);
     border: none;
     margin: 0;
   }
-  .aboutLink{
-    color: antiquewhite;
+.aboutLink{
+    color: #faebd7;
     text-decoration: none;
   }
   
-
 .social-icons {
     display: flex;
     justify-content: center;
@@ -45,5 +40,11 @@
 }
 
 .social-icons a:hover {
-    color: #f9f3f3;
+    color: #f5f1f1;
+}
+.footer-section p{
+  color: #faebd7;
+  display: inline;
+  margin: 0px;
+  padding: 11px;
 }

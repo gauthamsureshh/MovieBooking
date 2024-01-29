@@ -1,12 +1,17 @@
 import { useState } from "react"
 import "../Styles/auth_css.css"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
+import Details from "../Components/footer"
+import { useDispatch } from "react-redux"
+import { setUser } from "../store/authSlice"
 
 function Login(){
     const [username,setUsername]=useState('')
     const [password,setPassword]=useState('')
     const [errormsg,setErrormsg]=useState('')
+    const dispatch=useDispatch()
+    const nav=useNavigate()
 
     function attemptLogin(){
         const user={
@@ -15,9 +20,15 @@ function Login(){
         }
         axios.post('http://127.0.0.1:8000/login',user).then(response=>{
             setErrormsg('')
-            console.log(response.data.token)
+            var user={
+                username:username,
+                token:response.data.token
+            }
+            dispatch(setUser(user))
+    nav("/")        
         }).catch(error=>{
-            if(error.response.data.errors){
+            console.log(error)
+            if(error.response.data.error){
                 setErrormsg(Object.values(error.response.data.error).join(''))
             }
             else if(error.response.data.message){
@@ -30,6 +41,7 @@ function Login(){
     }
     
     return(
+        <>
         <div className="login-body">
             <div className="form signin">
             <div className="card">
@@ -47,9 +59,13 @@ function Login(){
                 <button className="btn btn-secondary" onClick={attemptLogin}>Login</button>
                 </div>
                 <p className="reg">Not Registered? <Link to="/register"  className="login">Create an Account</Link></p>
+                <Link to={'/adminlogin'} className="btn btn-outline-info">Admin Login</Link>
+            </div>
             </div>
         </div>
-        </div>
+        <Details/>
+        </>
+
     )
 }
 

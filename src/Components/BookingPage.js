@@ -1,52 +1,76 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import "../Styles/booking.css"
-import MovieSeatBooking from './seats';
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import MovieSeatBooking from "./seats"
+import checkAuth from '../Auth/checkAuth';
 
-function BookingCard (){
+
+
+
+function BookingCard() {
+    const { movieid } = useParams();
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedShowTime, setSelectedShowTime] = useState(null);
+    const [movie, setMovie] = useState(null);
+
+
+    const nav =useNavigate()
+    const handleProceed=()=>{
+        nav("../confirmticket")
+    }
+
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:8000/moviedetails/${movieid}/`).then(response => {
+            const details = response.data[0];
+            console.log(details)
+            setMovie(details);
+        })
+    }, [movieid]);
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
 
     const handleShowTimeChange = (time) => {
-        setSelectedShowTime(time)
-    }
-    const availableDates = [
-        { date: '2024-01-25', display: '25 Jan' },
-        { date: '2024-01-26', display: '26 Jan' },
-        { date: '2024-01-27', display: '27 Jan' },
-        { date: '2024-01-28', display: '28 Jan' },
-        { date: '2024-01-29', display: '29 Jan' },
-        ]
-    
-    const showTimes = ['11:30 AM', '02:30 PM', '05:00 PM', '09:00 PM'];
+        setSelectedShowTime(time);
+    };
 
-    return(
+
+    return (
         <div className='book-body'>
             <div className='card'>
-            <div className='card-header'>
-                {availableDates.map(({ date, display }) => (
-                <button key={date} className={`date-button ${selectedDate === date ? 'selected' : ''}`} onClick={() => handleDateChange(date)}>
-                    {display}
-                </button>
-                ))}
-            </div>
-            <div className='card-footer'>
-                {showTimes.map((time) => (
-                <button key={time} className={`showtime-button ${selectedShowTime === time ? 'selected' : ''}`} onClick={() => handleShowTimeChange(time)}>
-                    {time}
-                </button>
-                ))}
-            </div>
-            <div className='card-footer'>
-                <MovieSeatBooking/>
+                <div className='card-header'>
+                    <h4> Movie :{movie?.movie_title}</h4>
+                </div>
+                <div className='card-header'>
+                    <button
+                        className={`date-button ${selectedDate === movie?.availableDates ? 'selected' : ''}`}
+                        onClick={() => handleDateChange(movie?.availableDates)}
+                    >
+                        {new Date(movie?.availableDates).toLocaleDateString('en-GB', { year: '2-digit', month: 'short' })}
+                    </button>
+                </div>
+                <div className='card-footer'>
+                    {movie?.showTimes.map((showTime, index) => (
+                    <button key={index} 
+                        className={`showtime-button ${selectedShowTime === showTime ? 'selected' : ''}`}
+                        onClick={() => handleShowTimeChange(showTime)}
+                    >
+                        {showTime}
+                    </button>
+                    ))}
+                </div>
+                <div className='card-footer'>
+                    <MovieSeatBooking movieid={movieid}/>
+                </div>
+                <div className='proceed'>
+                    <button className='btn btn-danger book-now' onClick={handleProceed}>Proceed</button>
+                </div>
             </div>
         </div>
-        </div>
-    )
+    );
+}
 
-};
-
-export default BookingCard;
+export default checkAuth(BookingCard)
