@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import logo from '../Images/logo3.png'
 import NavStyle from "./nav_Style"
 import "../Styles/dropdown.css"
@@ -10,11 +10,16 @@ import { removeUser } from "../store/authSlice";
 
 
 function NavBar(){
-    // Search function along logic goes here
+    const [searchTerm,setSearchTerm]=useState('')
+    const handleSearchInput=(event)=>{
+        event.preventDefault()
+        setSearchTerm(event.target.value)
+    }
 
-
-
-    // function to check the key enter
+    const handleSearch= async (event)=>{
+        event.preventDefault()
+        nav(`/searchhresult/${searchTerm}`)
+    }
 
     const user=useSelector(store=>store.auth.user)
     const dispatch=useDispatch()
@@ -35,7 +40,7 @@ function NavBar(){
 
     return (
 
-        <nav class="navbar fixed-top navbar-expand-lg navbar-black bg-black">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-black custom-navbar bg-black">
             <a class="navbar-brand" href="#">
                 <img src={logo} width="100" height="30" className="d-inline-block align-top" alt="Theatre Logo"/>
             </a>
@@ -48,10 +53,18 @@ function NavBar(){
             <div className="ml-auto">
             <input 
                         className="form-control mr-sm-2 medium-search-bar" type="search" 
-                        placeholder="Search for Movies" aria-label="Search"
-                        // onKeyPress={}
-                        // onChange={}
+                        placeholder="Search for Movies" aria-label="Search" value={searchTerm}
+                        onChange={handleSearchInput}
             />
+            </div>
+            <div>
+                <button
+                className="btn btn-small btn-success mr-1"
+                type="button"
+                onClick={handleSearch}
+              >
+                Search
+              </button>
             </div>
             {user ?(
                 <Dropdown>
@@ -61,7 +74,7 @@ function NavBar(){
 
                 <Dropdown.Menu>
                     <Dropdown.Item ><Link to={'/'} style={{textDecoration:'none'}} className="drop-down">Home</Link></Dropdown.Item>
-                    <Dropdown.Item ><Link to={'/'} style={{textDecoration:'none'}} className="drop-down">My Order</Link></Dropdown.Item>
+                    <Dropdown.Item ><Link to={'/mybooking'} style={{textDecoration:'none'}} className="drop-down">My Booking</Link></Dropdown.Item>
                     <Dropdown.Item ><Link to={'/aboutus'} style={{textDecoration:'none'}} className="drop-down">AboutUs</Link></Dropdown.Item>
                     <Dropdown.Item ><Link to={'/contactus'} className="drop-down" style={{textDecoration:'none'}}>ContactUs</Link></Dropdown.Item>
                     <Dropdown.Item className="drop-down" onClick={logout}>Logout</Dropdown.Item>

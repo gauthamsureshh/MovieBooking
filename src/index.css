@@ -1,7 +1,6 @@
 
-.medium-search-bar {
-    width: 200px;
-}
-
-
-
+  /* Adjust styles for the search input */
+  .medium-search-bar {
+    max-width: 200px; /* Set a maximum width for the search bar */
+    flex-grow: 1; /* Allow the search bar to grow and take available space */
+  }

@@ -24,6 +24,7 @@ function Login(){
                 username:username,
                 token:response.data.token
             }
+            console.log(`token ${user.token}`)
             dispatch(setUser(user))
     nav("/")        
         }).catch(error=>{

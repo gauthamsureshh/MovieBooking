@@ -1,0 +1,13 @@
+body{
+    height: 100vh;
+    background-image: url("https://wallpapercrafter.com/desktop1/651636-simple-background-black-background-minimalism-theater.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.mybooking{
+    background-color: rgba(147, 198, 120, 0.954);
+}
+.mybooking:hover{
+    background-color: rgba(141, 196, 111, 0.954);
+}

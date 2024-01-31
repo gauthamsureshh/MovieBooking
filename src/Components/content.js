@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import "../Styles/movieList.css"
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+
 
 function Nowshowing() {
     const [movies,setMovies]=useState([])
     const [showAll,setShowall]=useState(false)
-    const user=useSelector(store=>store.auth.user)
     const nav=useNavigate()
 
     useEffect(()=>{

@@ -26,7 +26,7 @@ function ListMovies(){
         <>
         <h2 className="text-white">NOW RUNNING MOVIES</h2>
         <table className="table table-hover" border="1" >
-        <thead className="thead-dark">
+        <thead className="thead">
             <tr>
                 <th>Movie Id</th>
                 <th>Title</th>

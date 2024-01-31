@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import React, { useEffect, useState } from "react";
 
 import '../Styles/seats_css.css';
@@ -6,41 +6,15 @@ import '../Styles/seats_css.css';
 
 function MovieSeatBooking(props){
 
-  console.log(props.movieid)
+
   
   const [selectedSeats,setSelectedSeats]=useState([])
-  const [moviePrice,setMoviePrice]=useState(10)
-
-  useEffect(()=>{
-    const fetchData=async()=>{
-      try{
-        const response=await axios.get('http://127.0.0.1:8000/seatselection/2/')
-        const {selected_seats,movie_price}=response.data
-        setSelectedSeats(selected_seats || [])
-        setMoviePrice(movie_price  || 10)
-      }
-      catch(error){
-        console.log('Error getting data',error)
-      }
-    }
-    fetchData()
-  },[])
 
 
+const sendSeatsBack=()=>{
+  props.OnSeatChange(selectedSeats)
 
-useEffect(()=>{
-  const postData=async()=>{
-    try{
-      await axios.patch('http://127.0.0.1:8000/seatselection/2/',{
-        selected_seats:selectedSeats,
-        movie_price:moviePrice
-      })
-    }catch(error){
-      console.log("error saving seats",error)
-    }
-  }
-  postData()
-},[selectedSeats,moviePrice])
+}
 
 const handleSeatClick = (index) => {
   const newSelectedSeats = [...selectedSeats];
@@ -52,9 +26,12 @@ const handleSeatClick = (index) => {
   setSelectedSeats(newSelectedSeats);
 };
 
+useEffect(() => {
+  sendSeatsBack();
+}, [selectedSeats]);
 const renderSeats = () => {
-  const rows = 3; // Number of rows
-  const seatsPerRow = 8; // Number of seats per row
+  const rows = 3; 
+  const seatsPerRow = 8;
 
   const seatComponents = [];
 
@@ -109,7 +86,10 @@ return(
       </div>
 
       <p className="text">
-        You have selected <span id="count">{selectedSeats.length}</span> Seats 
+        You have selected <span id="count">{selectedSeats.length}</span> Seats
+      </p>
+      <p>
+        Total Amount: ${selectedSeats.length * 20}
       </p>
       
     </div>

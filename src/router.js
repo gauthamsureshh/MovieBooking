@@ -4,13 +4,16 @@ import App from "./App";
 import Register from "./Auth/Register";
 import AboutUs from "./Components/aboutus";
 import ContactUs from "./Components/contactus";
-import Ticket from "./Components/Ticket";
 import BookingCard from "./Components/BookingPage";
 import Admin from "./admin/admin";
 import AddMovie from "./admin/addmovie";
 import ListMovies from "./admin/listmovie";
 import EditMovie from "./admin/editmovie";
 import AdminLogin from "./admin/adminlogin";
+import ConfirmPage from "./Components/confirmPage";
+import ViewTicket from "./Components/viewTicket";
+import MyBooking from "./Components/myBooking";
+import SearchResults from "./Components/demo";
 
 
 
@@ -21,11 +24,15 @@ const router=createBrowserRouter([
     {path:'aboutus',element:<AboutUs/>},
     {path:'contactus',element:<ContactUs/>},
     {path:'bookingpage/:movieid',element:<BookingCard/>},
-    {path:'confirmticket',element:<Ticket/>},
     {path:'admin',element:<Admin/>},
     {path:'addmovie',element:<AddMovie/>},
     {path:'listmovie',element:<ListMovies/>},
     {path:'editmovie/:movieid',element:<EditMovie/>},
-    {path:'adminlogin',element:<AdminLogin/>}
+    {path:'adminlogin',element:<AdminLogin/>},
+    {path:'confirmpage',element:<ConfirmPage/>},
+    {path:'viewticket',element:<ViewTicket/>},
+    {path:'mybooking',element:<MyBooking/>},
+    {path:'searchhresult/:searchterm',element:<SearchResults/>}
+
 ])
 export default router

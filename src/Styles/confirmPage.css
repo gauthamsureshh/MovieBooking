@@ -1,9 +1,10 @@
-.confirmBody{
+
+.confirmpageBody{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(https://st3.depositphotos.com/1064045/15061/i/450/depositphotos_150614902-stock-photo-unusual-cinema-concept-3d-illustration.jpg);
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-national-day-film-festival-simple-gray-background-image_195524.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -38,6 +39,7 @@
 }
 .confirm{
     background-color: rgba(169, 36, 36, 0.943);
+    margin: 5px;
 }
 .confirm:hover{
     background-color:rgba(169, 36, 36, 0.714);
