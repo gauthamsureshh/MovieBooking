@@ -21,10 +21,12 @@ function Login(){
         axios.post('http://127.0.0.1:8000/login',user).then(response=>{
             setErrormsg('')
             var user={
+                id:response.data.id,
+                email:response.data.email,
                 username:username,
                 token:response.data.token
             }
-            console.log(`token ${user.token}`)
+            console.log(`token ${user.email}`)
             dispatch(setUser(user))
     nav("/")        
         }).catch(error=>{

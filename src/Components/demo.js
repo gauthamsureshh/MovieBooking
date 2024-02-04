@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
+import poster from "../Images/logo2.png"
 
 
 function SearchResults(){
 const {searchTerm}=useParams()
 const [movies,setMovies]=useState([])
+console.log("Serach Term:",searchTerm)
 useEffect(() => {
-  axios.get(`http://127.0.0.1:8000/moviesearch/${searchTerm}`).then(response => {
+  axios.get(`http://127.0.0.1:8000/search_movies/${searchTerm}/`).then(response => {
       const details = response.data;
       console.log("API response:",details)
       setMovies(details);
@@ -17,7 +19,7 @@ useEffect(() => {
 }, [searchTerm]);
 const nav=useNavigate()
 const handleBook=(movieid)=>{
-  nav(`bookingpage/${movieid}`)
+  nav(`/bookingpage/${movieid}`)
 }
 
   function formatDuration(duration) {
@@ -41,7 +43,10 @@ const handleBook=(movieid)=>{
             </div>
           ))
         ) : (
-          <p>No results found.</p>
+          <div className="no-results-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+            <h2>No Results Found</h2>
+            <img className="no-results-image" src={poster} height={150} width={150} alt="No Results Image" />
+          </div>
         )}
       </div>
     </div>

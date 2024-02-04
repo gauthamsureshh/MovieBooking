@@ -14,11 +14,16 @@ function NavBar(){
     const handleSearchInput=(event)=>{
         event.preventDefault()
         setSearchTerm(event.target.value)
+        console.log('main',searchTerm)
     }
 
-    const handleSearch= async (event)=>{
+    const handleSearch=(event)=>{
         event.preventDefault()
-        nav(`/searchhresult/${searchTerm}`)
+        if(searchTerm.trim()!=='')
+        {
+            nav(`/searchhresult/${searchTerm}`)
+        }
+        
     }
 
     const user=useSelector(store=>store.auth.user)
@@ -61,6 +66,7 @@ function NavBar(){
                 <button
                 className="btn btn-small btn-success mr-1"
                 type="button"
+                value={searchTerm}
                 onClick={handleSearch}
               >
                 Search

@@ -5,7 +5,9 @@ const ticketSlice=createSlice({
         selectedSeats:[],
         selectedDate:null,
         selectedTime:null,
-        movieId:null
+        selectedmovieName:null,
+        selectedUrl:null,
+        selectedmovieId:null
     },
     reducers:{
         selectSeat:(state,action)=>{
@@ -17,11 +19,18 @@ const ticketSlice=createSlice({
         selectTime:(state,action)=>{
             state.selectedTime=action.payload
         },
+        selectmovieName:(state,action)=>{
+            state.selectedmovieName=action.payload
+        },
+        selectUrl:(state,action)=>{
+            state.selectedUrl=action.payload
+        },
         selectmovieId:(state,action)=>{
-            state.movieId=action.payload
-        } 
+            state.selectedmovieId=action.payload
+        }
+
     }
 })
 
-export const{selectSeat,selectDate,selectTime,selectmovieId}=ticketSlice.actions
+export const{selectSeat,selectDate,selectTime,selectmovieName,selectUrl,selectmovieId}=ticketSlice.actions
 export default ticketSlice.reducer

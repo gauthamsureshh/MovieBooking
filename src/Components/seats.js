@@ -89,7 +89,7 @@ return(
         You have selected <span id="count">{selectedSeats.length}</span> Seats
       </p>
       <p>
-        Total Amount: ${selectedSeats.length * 20}
+        Total Amount: &#8377;{selectedSeats.length * 140.0}
       </p>
       
     </div>

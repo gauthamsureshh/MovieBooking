@@ -23,3 +23,17 @@
 .seat-ticket{
     color: black;
 }
+
+
+.btn-gohome{
+    color: black;
+}
+.viewticket-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.center-buttons {
+    text-align: center;
+    margin-top: -60px; /* Adjust margin as needed */
+}

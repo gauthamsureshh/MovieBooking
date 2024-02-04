@@ -30,9 +30,9 @@ const router=createBrowserRouter([
     {path:'editmovie/:movieid',element:<EditMovie/>},
     {path:'adminlogin',element:<AdminLogin/>},
     {path:'confirmpage',element:<ConfirmPage/>},
-    {path:'viewticket',element:<ViewTicket/>},
+    {path:'viewticket/:bookid',element:<ViewTicket/>},
     {path:'mybooking',element:<MyBooking/>},
-    {path:'searchhresult/:searchterm',element:<SearchResults/>}
+    {path:'searchhresult/:searchTerm',element:<SearchResults/>}
 
 ])
 export default router

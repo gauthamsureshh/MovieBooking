@@ -6,7 +6,7 @@ import axios from 'axios';
 import MovieSeatBooking from "./seats"
 import checkAuth from '../Auth/checkAuth';
 import { useDispatch } from 'react-redux';
-import { selectSeat,selectDate,selectTime,selectmovieId } from '../store/ticketSlice';
+import { selectSeat,selectDate,selectTime,selectmovieName,selectUrl,selectmovieId} from '../store/ticketSlice';
 
 
 
@@ -21,12 +21,21 @@ function BookingCard() {
     const nav =useNavigate()
     const dispatch=useDispatch()
     const handleProceed=()=>{
-        dispatch(selectTime(selectedShowTime))
-        dispatch(selectmovieId(movieid))
-        dispatch(selectDate(selectDate))
-        dispatch(selectSeat(selectedSeatsfromchild))
-        nav("../confirmpage")
+        if(selectedSeatsfromchild.length > 0 && selectedDate && selectedShowTime){
+            dispatch(selectmovieId(movieid))
+            dispatch(selectTime(selectedShowTime))
+            dispatch(selectmovieName(movie.movie_title))
+            dispatch(selectDate(selectedDate))
+            dispatch(selectSeat(selectedSeatsfromchild))
+            dispatch(selectUrl(movie.poster_url))
+            nav("../confirmpage")
+        }
+        else{
+            alert("Have to Select Seats,Time And Date to Proceed")
+        }
+        
     }
+    console.log(`date${selectedDate} and time ${selectedShowTime}`)
 
     useEffect(() => {
         axios.get(`http://127.0.0.1:8000/moviedetails/${movieid}/`).then(response => {
