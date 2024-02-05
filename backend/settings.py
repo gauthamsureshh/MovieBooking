@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'User',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'django_filters'
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,7 +56,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Replace with the actual origin of your React app
+    "http://localhost:3000", 
 ]
 
 
@@ -83,9 +86,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'enmapictures',#Name of the database created for this project
-        'USER': 'root',#Enter your mysql username
-        'PASSWORD': '',#Enter your mysql password
+        'NAME': 'enma',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
