@@ -31,3 +31,11 @@ body{
     background-color: rgba(84, 205, 242, 0.717);
     color: black;
 }
+.btn-poster-movie{
+    background-color: rgba(146, 101, 161, 0.901);
+}
+
+.btn-poster-movie:hover{
+    background-color: rgba(146, 101, 161, 0.844);
+    color: black;
+}

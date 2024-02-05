@@ -39,7 +39,9 @@ function AddMovie(){
         setShowtime(selectedShowtime)
     }
     return(
-        <div className="container">
+        <div className=" adminAddmovie">
+            <div className="row">
+                <div className="col-8 offset-2">
                     <h1 className="text-center" style={{color:'rgb(221, 130, 54)'}}>ADD SHOWS</h1>
                     <div className="form-group">
                         <label className="add-label">Title</label>
@@ -115,7 +117,9 @@ function AddMovie(){
                         <button className="btn btn-success" onClick={addMovie}>Submit</button>
                     </div>
                 </div>
-    
+            </div>
+        </div>
+                
     )
 }
 

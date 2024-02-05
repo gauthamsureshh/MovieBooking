@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import React,{ useEffect, useState } from "react"
 import "./ad_css/editmov.css"
 import Select from "react-select";
 import axios from "axios";
@@ -55,12 +55,12 @@ function EditMovie(){
         setShowtime(selectedShowtime)
     }
     return(
-        <div className="container">
+        <div className=" adminEditmovie">
             <div className="row">
                 <div className="col-8 offset-2">
-                    <h1 className="text-center" style={{color:'rgb(221, 130, 54)'}}>Edit Post</h1>
+                    <h1 className="text-center" style={{color:'rgb(221, 130, 54)'}}>Edit Movie Details</h1>
                     <div className="form-group">
-                        <label className="add-label">Title</label>
+                        <label className="edit-label">Title</label>
                         <input 
                         type="text" 
                         value={title}
@@ -69,7 +69,7 @@ function EditMovie(){
                         />
                     </div>
                     <div className="form-group">
-                        <label className="add-label">Genre</label>
+                        <label className="edit-label">Genre</label>
                         <input
                         type="text"
                         value={genre}
@@ -78,7 +78,7 @@ function EditMovie(){
                         />
                     </div>
                     <div className="form-group">
-                        <label className="add-label">Duration</label>
+                        <label className="edit-label">Duration</label>
                         <input type="text"
                         className="form-control" 
                         placeholder="HH:MM:SS"
@@ -87,7 +87,7 @@ function EditMovie(){
                         />
                     </div>
                     <div className="form-group">
-                        <label className="add-label">Show Starting Date</label>
+                        <label className="edit-label">Show Starting Date</label>
                         <input type="text"
                         className="form-control" 
                         placeholder="YYYY-MM-DD"
@@ -96,7 +96,7 @@ function EditMovie(){
                         />
                     </div>
                     <div className="form-group">
-                        <label className="add-label">Show Ending Date</label>
+                        <label className="edit-label">Show Ending Date</label>
                         <input type="text"
                         className="form-control" 
                         placeholder="YYYY-MM-DD"
@@ -105,13 +105,13 @@ function EditMovie(){
                         />
                     </div>
                     <div className="form-group">
-                        <label className="add-label">Show Time</label>
+                        <label className="edit-label">Show Time</label>
                         <Select isMulti options={showTimeoptions}
                         value={showtime}
                         onChange={handletimeChange} className="genre-select"/>
                     </div>
                     <div className="form-group">
-                        <label className="add-label">Date Of Release</label>
+                        <label className="edit-label">Date Of Release</label>
                         <input type="text"
                         className="form-control" 
                         placeholder="YYYY-MM-DD"
@@ -120,7 +120,7 @@ function EditMovie(){
                         />
                     </div>
                     <div className="form-group">
-                        <label className="add-label">URL of Poster</label>
+                        <label className="edit-label">URL of Poster</label>
                         <input type="text"
                         className="form-control" 
                         placeholder="Paste Image URl"

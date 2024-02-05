@@ -1,5 +1,5 @@
 import poster from "../Images/logo3.png";
-import React,{useState} from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
@@ -13,7 +13,6 @@ function ConfirmPage({ selectedSeats, selectedDate, selectedTime, selectedmovieN
     const options = {day: '2-digit', month: 'short'};
     const formatted_date=showdate.toLocaleDateString('en-US',options)
     const user=useSelector(store=>store.auth.user)
-    console.log(`userid:${user.email}`)
     const nav=useNavigate()
 
     const handlePayment=()=>{

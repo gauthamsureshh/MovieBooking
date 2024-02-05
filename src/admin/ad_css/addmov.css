@@ -1,6 +1,13 @@
 .add-label{
-    color: bisque;
+    color: rgb(230, 212, 75);
+    font-size: 25px;
 }
 .genre-select{
     color: black;
+}
+.adminAddmovie{
+    background-image: url('https://st3.depositphotos.com/1064045/15061/i/450/depositphotos_150614902-stock-photo-unusual-cinema-concept-3d-illustration.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

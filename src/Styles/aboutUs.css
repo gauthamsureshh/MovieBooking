@@ -11,19 +11,14 @@
 header{
     margin-bottom: 30px;
 }
-h1{
-    font-size:40px;
-    color: #c9c9c6d3;
+.aboutUs-title{
+    font-size:50px;
+    color: #e6dbc1d3;
 }
 h4 {
     font-size:20px;
     color: #cbeff2eb;
 }
-/* .aboutSection,
-.goalSection,
-.teamsection {
-  margin-bottom: 30px;
-} */
 h2{
     font-size:30px;
     color: rgba(242, 192, 11, 0.678);

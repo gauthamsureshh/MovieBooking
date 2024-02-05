@@ -2,8 +2,7 @@ import React from 'react'
 import "../Styles/aboutUs.css"
 import Details from './footer'
 import { Link } from 'react-router-dom'
-import image from "../Images/logo3.png"
-import NavBar from './navBar'
+
 
 
 function AboutUs() {
@@ -11,7 +10,7 @@ function AboutUs() {
         <>
         <div className="aboutUs">
             <header>
-                <h1>Welcome to Enma Pictures</h1>
+                <h1 className='aboutUs-title'>Welcome to Enma Pictures</h1>
                 <h4>Your Ultimate Movie Experience</h4>
             </header>
             <section className="aboutSection">

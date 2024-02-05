@@ -12,6 +12,8 @@ function Admin(){
                 <ul className="list-unstyled">
                     <li><Link to={"/addmovie"} className="btn btn-add-movie">Add Movie</Link></li>
                     <li><Link to={"/listmovie"} className="btn btn-list-movie">List Movie</Link></li>
+                    <li><Link to={"/upcomingposter"} className="btn btn-poster-movie">Upcoming Poster</Link></li>
+
                 </ul>
             </div>
             </div>

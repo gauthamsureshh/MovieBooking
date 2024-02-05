@@ -28,18 +28,16 @@ function Nowshowing() {
     }
     return (
         <div className='now-showing'>
-            <marquee  direction="left">
-                <h4>-----------------------NOW SHOWING---------------------- </h4>
-            </marquee>
         <div className='movie-list-container'>
         {movies.slice(0,showAll ? movies.length :4).map(movie=>(
-            <div className="movie-card" key={movie.id}>
+            <div className={`movie-card ${movie.disabled ? 'disabled' : ''}`} key={movie.id}>
+            {movie.disabled && <div className="overlay-disable">SHOW CANCELED</div>}
                 <img className="poster" src={movie.poster_url} alt="Movie Poster" />
                 <div className="movie-details">
                     <h2 className="title">{movie.movie_title}</h2>
-                    <h4 className="genre">{movie.genre}</h4>
-                    <h4 className="duration">{formatDuration(movie.duration)}</h4>
-                    <h4 className="release-date">{movie.date_of_release}</h4>
+                    <h4 className="genre-now">{movie.genre}</h4>
+                    <h4 className="duration-now">{formatDuration(movie.duration)}</h4>
+                    <h4 className="release-date-now">{movie.date_of_release}</h4>
                 </div>
                 <button className="btn-book-now" onClick={()=>handleBook(movie.id)}>Book Now</button>
             </div>

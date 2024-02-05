@@ -76,20 +76,27 @@
 }
 
 .seat-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
 }
 
 .seat {
-  cursor: pointer;
-  background-color: #eee;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  transition: background-color 0.3s;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.arrow-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
 }

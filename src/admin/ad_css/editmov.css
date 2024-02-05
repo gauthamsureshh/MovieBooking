@@ -1,3 +1,11 @@
 .edit-label{
-    color: bisque;
+    color: rgb(242, 249, 120);
+    font-size: 25px;
+}
+
+.adminEditmovie{
+    background-image: url('https://annenberg.usc.edu/sites/default/files/styles/article_full_content_1240x600/public/AII.8.17.23.jpg?itok=mbPNxH7R');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

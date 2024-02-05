@@ -1,4 +1,4 @@
-import React, { useState, useEffect ,createContext} from 'react';
+import React, { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import "../Styles/booking.css"
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,7 @@ import { selectSeat,selectDate,selectTime,selectmovieName,selectUrl,selectmovieI
 
 
 function BookingCard() {
+
     const { movieid } = useParams();
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedShowTime, setSelectedShowTime] = useState(null);
@@ -50,6 +51,7 @@ function BookingCard() {
         setSelectedSeatsFromChild(selectedSeats)
     }
 
+
     const getDates = (startDate, endDate) => {
         const dates = [];
         let currentDate = new Date(startDate);
@@ -61,6 +63,9 @@ function BookingCard() {
 
         return dates;
     };
+    const dates = getDates(new Date(startShowDate), new Date(endShowDate))
+    const [visibleStartDateIndex, setVisibleStartDateIndex] = useState(0);
+    const visibleDates = dates.slice(visibleStartDateIndex, visibleStartDateIndex + 5);
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -68,6 +73,19 @@ function BookingCard() {
 
     const handleShowTimeChange = (time) => {
         setSelectedShowTime(time);
+    };
+
+
+    const handlePrevDates = () => {
+        if (visibleStartDateIndex > 0) {
+            setVisibleStartDateIndex((prevIndex) => prevIndex - 1);
+        }
+    };
+
+    const handleNextDates = () => {
+        if (visibleStartDateIndex + 5 < dates.length) {
+            setVisibleStartDateIndex((prevIndex) => prevIndex + 1);
+        }
     };
 
 
@@ -79,7 +97,8 @@ function BookingCard() {
                     <h4> Movie :{movie?.movie_title}</h4>
                 </div>
                 <div className='card-header'>
-                {getDates(new Date(startShowDate), new Date(endShowDate)).map((date, index) => (
+                <button className="arrow-button" onClick={handlePrevDates}>&lt;</button>
+                {visibleDates.map((date, index) => (
                         <button
                             key={index}
                             className={`date-button ${selectedDate === date.toISOString() ? 'selected' : ''}`}
@@ -87,7 +106,9 @@ function BookingCard() {
                         >
                             {new Date(date.toISOString().split('T')[0]).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}
                         </button>
-                    ))}
+                    ))} 
+                
+                    <button className="arrow-button" onClick={handleNextDates}>&gt;</button>
                 </div>
                 <div className='card-footer'>
                     {movie?.showTimes.map((showTime, index) => (
@@ -111,4 +132,4 @@ function BookingCard() {
     );
 }
 
-export default BookingCard
+export default checkAuth(BookingCard)

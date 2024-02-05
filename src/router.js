@@ -14,6 +14,7 @@ import ConfirmPage from "./Components/confirmPage";
 import ViewTicket from "./Components/viewTicket";
 import MyBooking from "./Components/myBooking";
 import SearchResults from "./Components/demo";
+import UpcomingPoster from "./admin/upcomingPoster";
 
 
 
@@ -32,7 +33,8 @@ const router=createBrowserRouter([
     {path:'confirmpage',element:<ConfirmPage/>},
     {path:'viewticket/:bookid',element:<ViewTicket/>},
     {path:'mybooking',element:<MyBooking/>},
-    {path:'searchhresult/:searchTerm',element:<SearchResults/>}
+    {path:'searchhresult/:searchTerm',element:<SearchResults/>},
+    {path:'upcomingposter',element:<UpcomingPoster/>}
 
 ])
 export default router

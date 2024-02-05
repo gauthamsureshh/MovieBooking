@@ -38,11 +38,11 @@
     text-align: center;
 }
 .confirm{
-    background-color: rgba(169, 36, 36, 0.943);
+    background-color: rgb(169, 36, 36);
     margin: 5px;
 }
 .confirm:hover{
-    background-color:rgba(169, 36, 36, 0.714);
+    background-color:rgba(169, 36, 36, 0.943);
     color: black;
 }
 

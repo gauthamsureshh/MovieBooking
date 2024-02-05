@@ -68,9 +68,9 @@ function NavBar(){
                 type="button"
                 value={searchTerm}
                 onClick={handleSearch}
-              >
-                Search
-              </button>
+                >
+                    Search
+                </button>
             </div>
             {user ?(
                 <Dropdown>

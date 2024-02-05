@@ -1,7 +1,7 @@
 
 .viewticket-body{
- min-height: 100vh;
- overflow-y: hidden;
+    min-height: 100vh;
+    overflow-y: hidden;
     background-image: url("https://static.vecteezy.com/system/resources/thumbnails/025/402/562/small_2x/movie-time-3d-render-illustration-cinema-poster-concept-on-color-background-composition-with-popcorn-clapperboard-3d-glasses-and-filmstrip-cinema-banner-design-for-movie-theater-photo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
